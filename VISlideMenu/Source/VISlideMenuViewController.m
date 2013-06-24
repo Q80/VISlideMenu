@@ -24,6 +24,10 @@
 #define kLeftMaxMenuWidth 320.0f
 #define kRightMaxMenuWidth 320.0f
 
+NSString *const VISlideMenuDidOpenLeft = @"VISlideMenuDidOpenLeft";
+NSString *const VISlideMenuDidOpenRight = @"VISlideMenuDidOpenRight";
+NSString *const VISlideMenuDidShowCenter = @"VISlideMenuDidShowCenter";
+
 const CGFloat kMaxAnimationDuration = 0.44f;
 
 typedef enum {
@@ -43,9 +47,9 @@ typedef enum {
 @property (nonatomic, strong) UIBarButtonItem *rightButtonBarItem;
 
 
-- (void)showCenterViewWithDuration:(CGFloat)duration;
-- (void)showLeftViewWithDuration:(CGFloat)duration;
-- (void)showRightViewWithDuration:(CGFloat)duration;
+- (void)showCenterViewWithDuration:(CGFloat)duration completition:(void(^)())completition;
+- (void)showLeftViewWithDuration:(CGFloat)duration completition:(void(^)())completition;
+- (void)showRightViewWithDuration:(CGFloat)duration completition:(void(^)())completition;
 
 - (void)_removeContentController:(UIViewController *)content;
 - (void)_eventuallyShowLeftButtonBarItem;
@@ -187,7 +191,7 @@ typedef enum {
     [self _removeContentController:_leftViewController];
     _leftViewController = leftViewController;
     [self _eventuallyShowLeftButtonBarItem];
-    if (_leftViewController == nil){ [self showCenterViewWithDuration:0.0f]; return;}
+    if (_leftViewController == nil){ [self showCenterViewWithDuration:0.0f completition:nil]; return;}
     
     CGRect frame = _leftViewController.view.frame;
     if (frame.size.width > kLeftMaxMenuWidth)
@@ -205,7 +209,7 @@ typedef enum {
     [self _removeContentController:_rightViewController];
     _rightViewController = rightViewController;
     [self _eventuallyShowRightButtonBarItem];
-    if (_rightViewController == nil){ [self showCenterViewWithDuration:0.0f]; return;}
+    if (_rightViewController == nil){ [self showCenterViewWithDuration:0.0f completition:nil]; return;}
     
     CGRect frame = _rightViewController.view.frame;
     if (frame.size.width > kRightMaxMenuWidth)
@@ -275,30 +279,42 @@ typedef enum {
 
 - (void)showCenterView
 {
-    [self showCenterViewWithDuration:kMaxAnimationDuration];
+    [self showCenterViewWithDuration:kMaxAnimationDuration completition:nil];
 }
 
-- (void)showCenterViewWithDuration:(CGFloat)duration
+- (void)showCenterView:(void (^)())completition
+{
+    [self showCenterViewWithDuration:kMaxAnimationDuration completition:completition];
+}
+
+- (void)showCenterViewWithDuration:(CGFloat)duration completition:(void(^)())completition
 {
     __block typeof(self) blockSelf = self;
-    
     [UIView animateWithDuration:duration
                      animations:^{
                          blockSelf.centerViewController.view.transform = CGAffineTransformIdentity;
                          blockSelf.currentState = VISlideMenuStateDefault;
                          [blockSelf.centerViewController.view removeGestureRecognizer:blockSelf.centerTapRecognizer];
                      } completion:^(BOOL finished){
-                         if (finished)
+                         if (finished) {
                              blockSelf.currentState = VISlideMenuStateDefault;
+                             [[NSNotificationCenter defaultCenter] postNotificationName:VISlideMenuDidShowCenter object:self];
+                             if(completition) completition();
+                         }
                      }];
 }
 
 - (void)showLeftView
 {
-    [self showLeftViewWithDuration:kMaxAnimationDuration];
+    [self showLeftViewWithDuration:kMaxAnimationDuration completition:nil];
 }
 
-- (void)showLeftViewWithDuration:(CGFloat)duration
+- (void)showLeftView:(void (^)())completition
+{
+    [self showLeftViewWithDuration:kMaxAnimationDuration completition:completition];
+}
+
+- (void)showLeftViewWithDuration:(CGFloat)duration completition:(void(^)())completition
 {
     __block typeof(self) blockSelf = self;
     
@@ -309,6 +325,8 @@ typedef enum {
                          if (finished) {
                              blockSelf.currentState = VISlideMenuStateLeftOpen;
                              [blockSelf.centerViewController.view addGestureRecognizer:blockSelf.centerTapRecognizer];
+                             [[NSNotificationCenter defaultCenter] postNotificationName:VISlideMenuDidOpenLeft object:self];
+                             if(completition) completition();
                          }
                      }];
 
@@ -316,11 +334,15 @@ typedef enum {
 
 - (void)showRightView
 {
-    [self showRightViewWithDuration:kMaxAnimationDuration];
+    [self showRightViewWithDuration:kMaxAnimationDuration completition:nil];
 }
 
+- (void)showRightView:(void (^)())completition
+{
+    [self showRightViewWithDuration:kMaxAnimationDuration completition:completition];
+}
 
-- (void)showRightViewWithDuration:(CGFloat)duration
+- (void)showRightViewWithDuration:(CGFloat)duration completition:(void(^)())completition
 {
     __block typeof(self) blockSelf = self;
     
@@ -331,6 +353,8 @@ typedef enum {
                          if (finished) {
                              blockSelf.currentState = VISlideMenuStateRightOpen;
                              [blockSelf.centerViewController.view addGestureRecognizer:blockSelf.centerTapRecognizer];
+                             [[NSNotificationCenter defaultCenter] postNotificationName:VISlideMenuDidOpenRight object:self];
+                             if(completition) completition();
                          }
                      }];
 }
@@ -428,11 +452,11 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
         
         
         if (slide == NO) {
-            [self showCenterViewWithDuration:duration];
+            [self showCenterViewWithDuration:duration  completition:nil];
         } else if (span > 0) {
-            [self showLeftViewWithDuration:duration];
+            [self showLeftViewWithDuration:duration  completition:nil];
         } else {
-            [self showRightViewWithDuration:duration];
+            [self showRightViewWithDuration:duration  completition:nil];
         }
     }
     
@@ -441,7 +465,7 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 - (void)_centerViewControllerTapped:(UIPanGestureRecognizer *)recognizer
 {
     if (recognizer.state == UIGestureRecognizerStateEnded)
-        [self showCenterViewWithDuration:kMaxAnimationDuration];
+        [self showCenterViewWithDuration:kMaxAnimationDuration completition:nil];
 }
 
 @end

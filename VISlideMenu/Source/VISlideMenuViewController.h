@@ -22,6 +22,10 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+extern NSString *const VISlideMenuDidOpenLeft;
+extern NSString *const VISlideMenuDidOpenRight;
+extern NSString *const VISlideMenuDidShowCenter;
+
 typedef enum {
     VISlideMenuStateDefault,
     VISlideMenuStateLeftOpen,
@@ -40,5 +44,9 @@ typedef enum {
 - (void)showRightView;
 - (void)showLeftView;
 - (void)showCenterView;
+- (void)showRightView:(void(^)())completition;
+- (void)showLeftView:(void(^)())completition;
+- (void)showCenterView:(void(^)())completition;
+
 
 @end
