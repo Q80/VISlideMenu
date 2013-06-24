@@ -1,0 +1,336 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B5620041773037000DAA6F9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5620031773037000DAA6F9 /* UIKit.framework */; };
+		5B5620061773037000DAA6F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5620051773037000DAA6F9 /* Foundation.framework */; };
+		5B5620081773037000DAA6F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5620071773037000DAA6F9 /* CoreGraphics.framework */; };
+		5B56200E1773037000DAA6F9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5B56200C1773037000DAA6F9 /* InfoPlist.strings */; };
+		5B5620101773037000DAA6F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B56200F1773037000DAA6F9 /* main.m */; };
+		5B5620141773037000DAA6F9 /* VIAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5620131773037000DAA6F9 /* VIAppDelegate.m */; };
+		5B5620161773037000DAA6F9 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5620151773037000DAA6F9 /* Default.png */; };
+		5B5620181773037000DAA6F9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5620171773037000DAA6F9 /* Default@2x.png */; };
+		5B56201A1773037000DAA6F9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B5620191773037000DAA6F9 /* Default-568h@2x.png */; };
+		5B562023177303DA00DAA6F9 /* VISlideMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B562022177303DA00DAA6F9 /* VISlideMenuViewController.m */; };
+		5B5620251773068B00DAA6F9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B5620241773068B00DAA6F9 /* QuartzCore.framework */; };
+		5B56202A1773238C00DAA6F9 /* VICenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B5620281773238C00DAA6F9 /* VICenterViewController.m */; };
+		5B56202B1773238C00DAA6F9 /* VICenterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B5620291773238C00DAA6F9 /* VICenterViewController.xib */; };
+		5B56202F177335FC00DAA6F9 /* VISideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B56202D177335FC00DAA6F9 /* VISideViewController.m */; };
+		5B562030177335FC00DAA6F9 /* VISideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B56202E177335FC00DAA6F9 /* VISideViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5B5620001773037000DAA6F9 /* VISlideMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VISlideMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B5620031773037000DAA6F9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		5B5620051773037000DAA6F9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		5B5620071773037000DAA6F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		5B56200B1773037000DAA6F9 /* VISlideMenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VISlideMenu-Info.plist"; sourceTree = "<group>"; };
+		5B56200D1773037000DAA6F9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		5B56200F1773037000DAA6F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		5B5620111773037000DAA6F9 /* VISlideMenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VISlideMenu-Prefix.pch"; sourceTree = "<group>"; };
+		5B5620121773037000DAA6F9 /* VIAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VIAppDelegate.h; sourceTree = "<group>"; };
+		5B5620131773037000DAA6F9 /* VIAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VIAppDelegate.m; sourceTree = "<group>"; };
+		5B5620151773037000DAA6F9 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		5B5620171773037000DAA6F9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		5B5620191773037000DAA6F9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		5B562021177303DA00DAA6F9 /* VISlideMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISlideMenuViewController.h; sourceTree = "<group>"; };
+		5B562022177303DA00DAA6F9 /* VISlideMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISlideMenuViewController.m; sourceTree = "<group>"; };
+		5B5620241773068B00DAA6F9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5B5620271773238C00DAA6F9 /* VICenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VICenterViewController.h; sourceTree = "<group>"; };
+		5B5620281773238C00DAA6F9 /* VICenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VICenterViewController.m; sourceTree = "<group>"; };
+		5B5620291773238C00DAA6F9 /* VICenterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VICenterViewController.xib; sourceTree = "<group>"; };
+		5B56202C177335FC00DAA6F9 /* VISideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VISideViewController.h; sourceTree = "<group>"; };
+		5B56202D177335FC00DAA6F9 /* VISideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VISideViewController.m; sourceTree = "<group>"; };
+		5B56202E177335FC00DAA6F9 /* VISideViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VISideViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B561FFD1773037000DAA6F9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B5620251773068B00DAA6F9 /* QuartzCore.framework in Frameworks */,
+				5B5620041773037000DAA6F9 /* UIKit.framework in Frameworks */,
+				5B5620061773037000DAA6F9 /* Foundation.framework in Frameworks */,
+				5B5620081773037000DAA6F9 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B561FF71773037000DAA6F9 = {
+			isa = PBXGroup;
+			children = (
+				5B5620091773037000DAA6F9 /* VISlideMenu */,
+				5B5620021773037000DAA6F9 /* Frameworks */,
+				5B5620011773037000DAA6F9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B5620011773037000DAA6F9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B5620001773037000DAA6F9 /* VISlideMenu.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B5620021773037000DAA6F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B5620241773068B00DAA6F9 /* QuartzCore.framework */,
+				5B5620031773037000DAA6F9 /* UIKit.framework */,
+				5B5620051773037000DAA6F9 /* Foundation.framework */,
+				5B5620071773037000DAA6F9 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B5620091773037000DAA6F9 /* VISlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				5B5620261773237E00DAA6F9 /* Demo */,
+				5B5620201773038300DAA6F9 /* Source */,
+				5B5620121773037000DAA6F9 /* VIAppDelegate.h */,
+				5B5620131773037000DAA6F9 /* VIAppDelegate.m */,
+				5B56200A1773037000DAA6F9 /* Supporting Files */,
+			);
+			path = VISlideMenu;
+			sourceTree = "<group>";
+		};
+		5B56200A1773037000DAA6F9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5B56200B1773037000DAA6F9 /* VISlideMenu-Info.plist */,
+				5B56200C1773037000DAA6F9 /* InfoPlist.strings */,
+				5B56200F1773037000DAA6F9 /* main.m */,
+				5B5620111773037000DAA6F9 /* VISlideMenu-Prefix.pch */,
+				5B5620151773037000DAA6F9 /* Default.png */,
+				5B5620171773037000DAA6F9 /* Default@2x.png */,
+				5B5620191773037000DAA6F9 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		5B5620201773038300DAA6F9 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5B562021177303DA00DAA6F9 /* VISlideMenuViewController.h */,
+				5B562022177303DA00DAA6F9 /* VISlideMenuViewController.m */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		5B5620261773237E00DAA6F9 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				5B5620271773238C00DAA6F9 /* VICenterViewController.h */,
+				5B5620281773238C00DAA6F9 /* VICenterViewController.m */,
+				5B5620291773238C00DAA6F9 /* VICenterViewController.xib */,
+				5B56202C177335FC00DAA6F9 /* VISideViewController.h */,
+				5B56202D177335FC00DAA6F9 /* VISideViewController.m */,
+				5B56202E177335FC00DAA6F9 /* VISideViewController.xib */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B561FFF1773037000DAA6F9 /* VISlideMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B56201D1773037000DAA6F9 /* Build configuration list for PBXNativeTarget "VISlideMenu" */;
+			buildPhases = (
+				5B561FFC1773037000DAA6F9 /* Sources */,
+				5B561FFD1773037000DAA6F9 /* Frameworks */,
+				5B561FFE1773037000DAA6F9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VISlideMenu;
+			productName = VISlideMenu;
+			productReference = 5B5620001773037000DAA6F9 /* VISlideMenu.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B561FF81773037000DAA6F9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = VI;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = Vilea;
+			};
+			buildConfigurationList = 5B561FFB1773037000DAA6F9 /* Build configuration list for PBXProject "VISlideMenu" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 5B561FF71773037000DAA6F9;
+			productRefGroup = 5B5620011773037000DAA6F9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B561FFF1773037000DAA6F9 /* VISlideMenu */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B561FFE1773037000DAA6F9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B56200E1773037000DAA6F9 /* InfoPlist.strings in Resources */,
+				5B5620161773037000DAA6F9 /* Default.png in Resources */,
+				5B5620181773037000DAA6F9 /* Default@2x.png in Resources */,
+				5B56201A1773037000DAA6F9 /* Default-568h@2x.png in Resources */,
+				5B56202B1773238C00DAA6F9 /* VICenterViewController.xib in Resources */,
+				5B562030177335FC00DAA6F9 /* VISideViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B561FFC1773037000DAA6F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B5620101773037000DAA6F9 /* main.m in Sources */,
+				5B5620141773037000DAA6F9 /* VIAppDelegate.m in Sources */,
+				5B562023177303DA00DAA6F9 /* VISlideMenuViewController.m in Sources */,
+				5B56202A1773238C00DAA6F9 /* VICenterViewController.m in Sources */,
+				5B56202F177335FC00DAA6F9 /* VISideViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5B56200C1773037000DAA6F9 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B56200D1773037000DAA6F9 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B56201B1773037000DAA6F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B56201C1773037000DAA6F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B56201E1773037000DAA6F9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VISlideMenu/VISlideMenu-Prefix.pch";
+				INFOPLIST_FILE = "VISlideMenu/VISlideMenu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		5B56201F1773037000DAA6F9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VISlideMenu/VISlideMenu-Prefix.pch";
+				INFOPLIST_FILE = "VISlideMenu/VISlideMenu-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B561FFB1773037000DAA6F9 /* Build configuration list for PBXProject "VISlideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B56201B1773037000DAA6F9 /* Debug */,
+				5B56201C1773037000DAA6F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B56201D1773037000DAA6F9 /* Build configuration list for PBXNativeTarget "VISlideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B56201E1773037000DAA6F9 /* Debug */,
+				5B56201F1773037000DAA6F9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B561FF81773037000DAA6F9 /* Project object */;
+}
