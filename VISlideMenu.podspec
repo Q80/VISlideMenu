@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary      = "An implementation of the common slide menu."
   s.homepage     = "https://github.com/vilea/VISlideMenu"
  
-  s.license      = { :type => 'Custom', :file => 'README.markdown' }
+  s.license      = { :type => 'Custom', :file => 'LICENSE.markdown' }
 
   s.author       = { "Junior Bontognali" => "junior.bontognali@vilea.ch" }
   s.source       = { :git => "https://github.com/vilea/VISlideMenu.git", :tag => "0.0.1" }
