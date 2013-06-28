@@ -397,9 +397,14 @@ typedef enum {
 
 #pragma mark - UIGestureRecognizer delegate
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {    
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+    // skip recognition of table view reordering gesture:
+    if([touch.view isKindOfClass:NSClassFromString(@"UITableViewCellReorderControl")]) {
+        return NO;
+    }
     return YES;
 }
+
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return YES;

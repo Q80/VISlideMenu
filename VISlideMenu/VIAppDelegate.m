@@ -29,7 +29,7 @@
     rootVC.leftViewController = [[UINavigationController alloc] initWithRootViewController:leftVC];
     rootVC.rightViewController = [[UINavigationController alloc] initWithRootViewController:rightVC];
     
-    [rootVC setDisablePanGesture:YES];
+    [rootVC setDisablePanGesture:NO];
     
     self.window.rootViewController = rootVC;
     [self.window makeKeyAndVisible];
