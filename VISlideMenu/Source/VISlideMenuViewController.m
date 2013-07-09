@@ -184,6 +184,14 @@ typedef enum {
     [((UIViewController *)_centerViewController) view].frame = (CGRect){.origin = origin, .size=centerViewController.view.frame.size};
     [_centerViewController didMoveToParentViewController:self];
     [self _addCenterGestureRecognizers];
+    [self _eventuallyShowLeftButtonBarItem];
+    [self _eventuallyShowRightButtonBarItem];
+    
+    _centerViewController.view.layer.shadowRadius = 5.0f;
+    _centerViewController.view.layer.shadowOffset = CGSizeZero;
+    _centerViewController.view.layer.shadowOpacity = 0.6f;
+    _centerViewController.view.layer.shouldRasterize = YES;
+    _centerViewController.view.layer.rasterizationScale = [UIScreen mainScreen].scale;
 }
 
 - (void)setLeftViewController:(UIViewController *)leftViewController
@@ -329,7 +337,7 @@ typedef enum {
                              if(completition) completition();
                          }
                      }];
-
+    
 }
 
 - (void)showRightView
@@ -367,6 +375,7 @@ typedef enum {
                                                                        action:@selector(_handlePan:)];
         [_centerPanRecognizer setMaximumNumberOfTouches:1];
         [_centerPanRecognizer setDelegate:self];
+        
     }
     return _centerPanRecognizer;
 }
@@ -404,7 +413,6 @@ typedef enum {
     }
     return YES;
 }
-
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
     return YES;
