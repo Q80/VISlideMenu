@@ -69,6 +69,7 @@ typedef enum {
         self.initialized = NO;
         self.view.backgroundColor = [UIColor blackColor];
         self.currentState = VISlideMenuStateDefault;
+        self.useOnlyIconForBarButton = NO;
     }
     return self;
 }
@@ -260,10 +261,24 @@ typedef enum {
         return;
     }
     
-    _leftButtonBarItem = [[UIBarButtonItem alloc] initWithTitle:self.leftViewController.title
-                                                          style:UIBarButtonItemStyleBordered
-                                                         target:self
-                                                         action:@selector(showLeftView)];
+    if ([self isUsingOnlyIconForBarButton] && _leftViewController.tabBarItem.image != nil) {
+        UIImage* iconImage = _leftViewController.tabBarItem.image;
+        CGRect frameimg = CGRectMake(0, 0, iconImage.size.width, iconImage.size.height);
+        UIButton *iconButton = [[UIButton alloc] initWithFrame:frameimg];
+        
+        [iconButton setBackgroundImage:iconImage forState:UIControlStateNormal];
+        [iconButton addTarget:self
+                       action:@selector(showLeftView)
+             forControlEvents:UIControlEventTouchUpInside];
+        
+        _leftButtonBarItem =[[UIBarButtonItem alloc] initWithCustomView:iconButton];
+    } else {
+        _leftButtonBarItem = [[UIBarButtonItem alloc] initWithTitle:self.leftViewController.title
+                                                              style:UIBarButtonItemStyleBordered
+                                                             target:self
+                                                             action:@selector(showLeftView)];
+    }
+    
     [navVC topViewController].navigationItem.leftBarButtonItem = _leftButtonBarItem;
 }
 
@@ -272,15 +287,45 @@ typedef enum {
     if (![self.centerViewController isKindOfClass:[UINavigationController class]] || ![self isPanGestureDisabled]) return;
     UINavigationController *navVC = (UINavigationController *)self.centerViewController;
     if (_rightViewController == nil) {
+        [navVC topViewController].navigationItem.rightBarButtonItems = nil;
         [navVC topViewController].navigationItem.rightBarButtonItem = nil;
         return;
     }
     
-    _rightButtonBarItem = [[UIBarButtonItem alloc] initWithTitle:self.rightViewController.title
-                                                           style:UIBarButtonItemStyleBordered
-                                                          target:self
-                                                          action:@selector(showRightView)];
+    if ([self isUsingOnlyIconForBarButton] && _rightViewController.tabBarItem.image != nil) {
+        UIImage* iconImage = _rightViewController.tabBarItem.image;
+        CGRect frameimg = CGRectMake(0, 0, iconImage.size.width, iconImage.size.height);
+        UIButton *iconButton = [[UIButton alloc] initWithFrame:frameimg];
+        
+        [iconButton setBackgroundImage:iconImage forState:UIControlStateNormal];
+        [iconButton addTarget:self
+                       action:@selector(showRightView)
+             forControlEvents:UIControlEventTouchUpInside];
+        
+        _rightButtonBarItem =[[UIBarButtonItem alloc] initWithCustomView:iconButton];
+    } else {
+        _rightButtonBarItem = [[UIBarButtonItem alloc] initWithTitle:self.rightViewController.title
+                                                               style:UIBarButtonItemStyleBordered
+                                                              target:self
+                                                              action:@selector(showRightView)];
+    }
     [navVC topViewController].navigationItem.rightBarButtonItem = _rightButtonBarItem;
+}
+
+- (void)addBarButtonItemToRightSide:(UIBarButtonItem *)buttonItem
+{
+    if (![self.centerViewController isKindOfClass:[UINavigationController class]] || ![self isPanGestureDisabled]) return;
+    UINavigationController *navVC = (UINavigationController *)self.centerViewController;
+    
+    //    // Optional: if you want to add space between the refresh & profile buttons
+    //    UIBarButtonItem *fixedSpaceBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    //    fixedSpaceBarButtonItem.width = 12;
+    if (_rightButtonBarItem) {
+        [navVC topViewController].navigationItem.rightBarButtonItems = @[_rightButtonBarItem, /* fixedSpaceBarButtonItem, */ buttonItem];
+    } else {
+        [navVC topViewController].navigationItem.rightBarButtonItem = buttonItem;
+    }
+    
 }
 
 #pragma mark - Shows
