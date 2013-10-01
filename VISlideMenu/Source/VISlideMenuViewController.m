@@ -328,6 +328,20 @@ typedef enum {
     
 }
 
+- (void)addBarButtonItemsToRightSide:(NSArray *) items
+{
+    if (![self.centerViewController isKindOfClass:[UINavigationController class]] || ![self isPanGestureDisabled]) return;
+    UINavigationController *navVC = (UINavigationController *)self.centerViewController;
+    
+    if (_rightButtonBarItem) {
+        NSMutableArray *allItems = items.mutableCopy;
+        [allItems insertObject:_rightButtonBarItem atIndex:0];
+        navVC.topViewController.navigationItem.rightBarButtonItems = allItems;
+    } else {
+        navVC.topViewController.navigationItem.rightBarButtonItems = items;
+    }
+}
+
 #pragma mark - Shows
 
 - (void)showCenterView
